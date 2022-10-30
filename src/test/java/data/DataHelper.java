@@ -50,7 +50,7 @@ public class DataHelper {
         var runner = new QueryRunner();
 
         try (
-                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app-db", "user", "pass");
+                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "user", "pass");
         ) {
             var verificationCode = runner.query(conn, usersSQL, new ScalarHandler<>());
             return new VerificationCode((String) verificationCode);
